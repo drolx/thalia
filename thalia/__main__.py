@@ -20,13 +20,19 @@
 #
 #  Project: thalia
 #  Author: Godwin peter. O (me@godwin.dev)
-#  Created At: Thu 19 Dec 2024 12:35:34
+#  Created At: Thu 19 Dec 2024 12:42:10
 #  Modified By: Godwin peter. O (me@godwin.dev)
-#  Modified At: Thu 19 Dec 2024 12:35:34
+#  Modified At: Thu 19 Dec 2024 12:42:10
 
-from unittest import TestCase
+import sys
+from thalia import main
+from thalia.Containers import Container
 
 
-class test_sample(TestCase):
-    def test_run(self):
-        self.run()
+if __name__ == "__main__":
+    container = Container()
+    # container.config.from_yaml(constant.project_configuration)
+    container.init_resources()
+    container.wire(modules=[sys.modules[__name__]])
+
+    main()

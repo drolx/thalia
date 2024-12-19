@@ -20,13 +20,14 @@
 #
 #  Project: thalia
 #  Author: Godwin peter. O (me@godwin.dev)
-#  Created At: Thu 19 Dec 2024 12:35:34
+#  Created At: Thu 19 Dec 2024 12:39:53
 #  Modified By: Godwin peter. O (me@godwin.dev)
-#  Modified At: Thu 19 Dec 2024 12:35:34
+#  Modified At: Thu 19 Dec 2024 12:39:53
 
-from unittest import TestCase
+from dependency_injector import containers, providers
+from thalia.common.defaults import constant
 
 
-class test_sample(TestCase):
-    def test_run(self):
-        self.run()
+class Container(containers.DeclarativeContainer):
+    config = providers.Configuration()
+    constant = providers.Factory(constant)

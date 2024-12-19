@@ -1,8 +1,9 @@
 # Thalia
 
-An easy-to-use python background job scheduler, with templated approach to creating long running background tasks 
+An easy-to-use python background job scheduler, with templated approach
+to creating long running background tasks.
 
-## TODO's for project
+## Goals for project
 
 - [ ] Add log library
 - [ ] Add a standard data defined HTTP library
