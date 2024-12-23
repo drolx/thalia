@@ -24,10 +24,9 @@
 #  Modified By: Godwin peter. O (me@godwin.dev)
 #  Modified At: Thu 19 Dec 2024 12:39:53
 
-from dependency_injector import containers, providers
-from thalia.common.defaults import constant
-
-
-class Container(containers.DeclarativeContainer):
-    config = providers.Configuration()
-    constant = providers.Factory(constant)
+# from dependency_injector import containers, providers
+#
+#
+# class Container(containers.DeclarativeContainer):
+#     config = providers.Configuration()
+#     constant = providers.Factory(constant)

@@ -24,9 +24,12 @@
 #  Modified By: Godwin peter. O (me@godwin.dev)
 #  Modified At: Thu 19 Dec 2024 12:35:34
 
-from unittest import TestCase
-
-
-class test_sample(TestCase):
-    def test_run(self):
-        self.run()
+import unittest
+from thalia import main
+ 
+class TestMathOperations(unittest.TestCase):
+def test_add(self):
+self.assertEqual(main(), 3)
+ 
+if __name__ == "__main__":
+unittest.main()

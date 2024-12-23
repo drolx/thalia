@@ -31,5 +31,4 @@ from thalia.handler import cli
 class App:
     @staticmethod
     def run():
-        # Initialize CLI options
         cli.hook()

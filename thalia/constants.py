@@ -20,19 +20,6 @@
 #
 #  Project: thalia
 #  Author: Godwin peter. O (me@godwin.dev)
-#  Created At: Thu 19 Dec 2024 12:42:10
+#  Created At: Fri 20 Dec 2024 08:08:06
 #  Modified By: Godwin peter. O (me@godwin.dev)
-#  Modified At: Thu 19 Dec 2024 12:42:10
-
-# import sys
-from thalia import main
-# from thalia.containers import Container
-
-
-if __name__ == "__main__":
-    # container = Container()
-    # container.config.from_yaml("")
-    # container.init_resources()
-    # container.wire(modules=[sys.modules[__name__]])
-
-    main()
+#  Modified At: Fri 20 Dec 2024 08:08:06

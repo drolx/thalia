@@ -10,60 +10,31 @@ $(VENV)/bin/activate:
 
 # venv is a shortcut target
 venv: $(VENV)/bin/activate
-	python3 -m pip install --upgrade setuptools virtualenv wheel pip psycopg2-binary black flake8
-	python3 -m pip install --user --upgrade pipenv
-	python3 -m virtualenv -p python3 $(VENV)
-	python3 -m pipenv install --skip-lock
+	python3 -m virtualenv $(VENV)
+	python3 -m pipenv shell
+
+install:
+	pipenv install
 
 update:
-	python3 -m pipenv update
+	pipenv update
 
-setup: venv
-	python3 -m pipenv run python setup.py install ${PARAMETERS}
+setup:
+	pipenv install -e . ${PARAMETERS}
 
-install: venv
-	make setup
+run:
+	pipenv run python -m thalia ${PARAMETERS}
 
-run: venv
-	python3 -m pipenv run python -m titan ${PARAMETERS}
-
-build: venv
-	python3 -m pipenv run python run setup.py build ${PARAMETERS}
-
-force: venv
-	python3 -m pipenv run python setup.py build -f ${PARAMETERS}
-
-dev: venv
-	python3 -m pipenv run python setup.py develop -u ${PARAMETERS}
-
-remove: venv
-	python3 -m pipenv run python setup.py remove ${PARAMETERS}
+build:
+	pipenv run python build ${PARAMETERS}
 
 test: build
-	python3 -m pipenv run python -m pytest ${TEST}
+	pipenv run python -m pytest ${TEST}
 
 clean:
-	pipenv --rm;rm -rf {$(VENV),env,build,dist,titan.egg-info,logs/*};rm -rf .pytest_cache;find . -type f -name '*.pyc' -delete
+	pipenv --rm
+	rm -rf {$(VENV),build,dist,logs/*};rm -rf .pytest_cache;find . -type f -name '*.pyc' -delete
 
 lint:
-	 python3 -m pipenv run python -m black --target-version=py35 titan setup.py
-	 python3 -m pipenv run python -m flake8 titan setup.py
-
-doc-build:
-	docker-compose build
-
-doc-up:
-	docker-compose up -d --build
-
-doc-ls:
-	docker-compose ps
-
-doc-logs:
-	docker-compose logs -f --tail 15
-
-doc-clean:
-	docker-compose down && docker-compose rm
-
-doc-down:
-	docker-compose down
-
+	 pipenv run python -m black --target-version=py35 thalia setup.py
+	 pipenv run python -m flake8 thalia setup.py

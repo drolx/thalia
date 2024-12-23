@@ -15,9 +15,7 @@ __pycache__
 .Python
 build/*
 dist/*
-jobs/*
 .tmp/
-/setup/
 ## OS metadata
 .DS_Store
 desktop.ini

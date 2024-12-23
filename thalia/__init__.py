@@ -24,10 +24,6 @@
 #  Modified By: Godwin peter. O (me@godwin.dev)
 #  Modified At: Thu 19 Dec 2024 12:36:24
 
-from dependency_injector.wiring import inject
-from thalia.app import App
 
-
-@inject
 def main() -> None:
-    App.run()
+    pass
