@@ -20,16 +20,19 @@
 #
 #  Project: thalia
 #  Author: Godwin peter. O (me@godwin.dev)
-#  Created At: Thu 19 Dec 2024 12:35:34
+#  Created At: Thu 19 Dec 2024 12:42:10
 #  Modified By: Godwin peter. O (me@godwin.dev)
-#  Modified At: Thu 19 Dec 2024 12:35:34
+#  Modified At: Thu 19 Dec 2024 12:42:10
 
-import unittest
+# import sys
 from thalia import main
- 
-class TestMathOperations(unittest.TestCase):
-def test_add(self):
-self.assertEqual(main(), 3)
- 
+# from thalia.containers import Container
+
+
 if __name__ == "__main__":
-unittest.main()
+    # container = Container()
+    # container.config.from_yaml("")
+    # container.init_resources()
+    # container.wire(modules=[sys.modules[__name__]])
+
+    main()

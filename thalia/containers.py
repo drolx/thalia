@@ -20,16 +20,13 @@
 #
 #  Project: thalia
 #  Author: Godwin peter. O (me@godwin.dev)
-#  Created At: Thu 19 Dec 2024 12:35:34
+#  Created At: Thu 19 Dec 2024 12:39:53
 #  Modified By: Godwin peter. O (me@godwin.dev)
-#  Modified At: Thu 19 Dec 2024 12:35:34
+#  Modified At: Thu 19 Dec 2024 12:39:53
 
-import unittest
-from thalia import main
- 
-class TestMathOperations(unittest.TestCase):
-def test_add(self):
-self.assertEqual(main(), 3)
- 
-if __name__ == "__main__":
-unittest.main()
+# from dependency_injector import containers, providers
+#
+#
+# class Container(containers.DeclarativeContainer):
+#     config = providers.Configuration()
+#     constant = providers.Factory(constant)

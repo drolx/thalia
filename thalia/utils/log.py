@@ -20,16 +20,39 @@
 #
 #  Project: thalia
 #  Author: Godwin peter. O (me@godwin.dev)
-#  Created At: Thu 19 Dec 2024 12:35:34
+#  Created At: Thu 19 Dec 2024 12:57:24
 #  Modified By: Godwin peter. O (me@godwin.dev)
-#  Modified At: Thu 19 Dec 2024 12:35:34
+#  Modified At: Thu 19 Dec 2024 12:57:24
 
-import unittest
-from thalia import main
- 
-class TestMathOperations(unittest.TestCase):
-def test_add(self):
-self.assertEqual(main(), 3)
- 
-if __name__ == "__main__":
-unittest.main()
+import logging
+import logging.handlers
+import sys
+
+
+def get():
+    # Change root logger level from WARNING (default) to
+    # NOTSET in order for all messages to be delegated.
+    logging.getLogger().setLevel(logging.NOTSET)
+
+    # Add stdout handler, with level INFO
+    console = logging.StreamHandler(sys.stdout)
+    console.setLevel(logging.INFO)
+    formatter = logging.Formatter("%(name)-13s: %(levelname)-8s %(message)s")
+    console.setFormatter(formatter)
+    logging.getLogger().addHandler(console)
+
+    # Add file rotating handler, with level DEBUG
+    rotating_handler = logging.handlers.RotatingFileHandler(
+        filename="logs/app.log", maxBytes=1000, backupCount=5
+    )
+    rotating_handler.setLevel(logging.DEBUG)
+    formatter = logging.Formatter(
+        "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    )
+    rotating_handler.setFormatter(formatter)
+    logging.getLogger().addHandler(rotating_handler)
+
+    return logging.getLogger(__name__)
+
+
+logger = get()

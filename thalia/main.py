@@ -20,16 +20,15 @@
 #
 #  Project: thalia
 #  Author: Godwin peter. O (me@godwin.dev)
-#  Created At: Thu 19 Dec 2024 12:35:34
+#  Created At: Thu 19 Dec 2024 12:36:45
 #  Modified By: Godwin peter. O (me@godwin.dev)
-#  Modified At: Thu 19 Dec 2024 12:35:34
+#  Modified At: Thu 19 Dec 2024 12:36:45
 
-import unittest
-from thalia import main
- 
-class TestMathOperations(unittest.TestCase):
-def test_add(self):
-self.assertEqual(main(), 3)
- 
-if __name__ == "__main__":
-unittest.main()
+
+from thalia.handler import cli
+
+
+class App:
+    @staticmethod
+    def run():
+        cli.hook()

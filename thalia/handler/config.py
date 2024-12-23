@@ -20,16 +20,24 @@
 #
 #  Project: thalia
 #  Author: Godwin peter. O (me@godwin.dev)
-#  Created At: Thu 19 Dec 2024 12:35:34
+#  Created At: Thu 19 Dec 2024 12:56:17
 #  Modified By: Godwin peter. O (me@godwin.dev)
-#  Modified At: Thu 19 Dec 2024 12:35:34
+#  Modified At: Thu 19 Dec 2024 12:56:17
 
-import unittest
-from thalia import main
- 
-class TestMathOperations(unittest.TestCase):
-def test_add(self):
-self.assertEqual(main(), 3)
- 
-if __name__ == "__main__":
-unittest.main()
+from yamlreader import yaml_load
+from thalia.common.utils.log import logger
+
+
+def get_all(location="conf/*.yaml"):
+    default_config = {}
+    try:
+        config_value = yaml_load(location)
+        default_config.update(config_value)
+    except Exception as err:
+        logger.error(err)
+    return default_config
+
+
+def value(obj_key):
+    # Get an object with key
+    pass
