@@ -20,6 +20,16 @@
 #
 #  Project: thalia
 #  Author: Godwin peter. O (me@godwin.dev)
-#  Created At: Thu 19 Dec 2024 12:55:00
+#  Created At: Thu 19 Dec 2024 12:55:35
 #  Modified By: Godwin peter. O (me@godwin.dev)
-#  Modified At: Thu 19 Dec 2024 12:55:00
+#  Modified At: Thu 19 Dec 2024 12:55:35
+
+import click
+
+
+@click.command(help="Execute and manage tasks")
+@click.option(
+    "-l", "--list", default=False, help="Show a list of available tasks scheduled"
+)
+def task(list: bool):
+    pass

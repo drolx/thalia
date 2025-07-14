@@ -20,6 +20,27 @@
 #
 #  Project: thalia
 #  Author: Godwin peter. O (me@godwin.dev)
-#  Created At: Thu 19 Dec 2024 12:55:22
+#  Created At: Thu 19 Dec 2024 12:54:41
 #  Modified By: Godwin peter. O (me@godwin.dev)
-#  Modified At: Thu 19 Dec 2024 12:55:22
+#  Modified At: Thu 19 Dec 2024 12:54:41
+
+import inspect
+
+
+def get_classes(module):
+    return [
+        cls_name for cls_name, cls_obj in inspect.getmembers(module, inspect.isclass)
+    ]
+
+
+def get_child_classes(module: object, base_class: any):
+    child_classes = []
+    for name, obj in inspect.getmembers(module):
+        if (
+            inspect.isclass(obj)
+            and issubclass(obj, base_class)
+            and obj is not base_class
+        ):
+            child_classes.append(obj)
+
+    return child_classes
