@@ -20,25 +20,18 @@
 #
 #  Project: thalia
 #  Author: Godwin peter. O (me@godwin.dev)
-#  Created At: Thu 19 Dec 2024 12:55:59
+#  Created At: Thu 19 Dec 2024 12:56:24
 #  Modified By: Godwin peter. O (me@godwin.dev)
-#  Modified At: Thu 19 Dec 2024 12:55:59
+#  Modified At: Thu 19 Dec 2024 12:56:24
 
-import click
+import logging
 
 
-@click.group(
-    help="Titan, an easy to use python background task scheduler",
-    invoke_without_command=True,
+# TODO: Logging considerations
+# Set log location from CLI
+# Manage clear logs
+
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s"
 )
-def instance():
-    pass
-
-
-def hook():
-
-    # Bounded CLI commands
-    # instance.add_command(version.version)
-
-    # Start execution
-    instance()
+logger = logging.getLogger(__name__)

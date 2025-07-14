@@ -20,14 +20,17 @@
 #
 #  Project: thalia
 #  Author: Godwin peter. O (me@godwin.dev)
-#  Created At: Thu 19 Dec 2024 12:56:42
+#  Created At: Thu 19 Dec 2024 12:55:15
 #  Modified By: Godwin peter. O (me@godwin.dev)
-#  Modified At: Thu 19 Dec 2024 12:56:42
+#  Modified At: Thu 19 Dec 2024 12:55:15
 
-"""
-Jobs count
-Jobs stats count
-Config state
-Job list and infos
-More...
-"""
+
+import click
+
+
+@click.command(help="Bootstraps daemon process for continous execution.")
+@click.option("-sv", "--services", default=False, help="Enables rest API services")
+@click.option("--tasks", default=False, help="Enables background task execution")
+@click.option("--ui", default=False, help="Enables web UI for schedules and task queue")
+def run(services: bool, tasks: bool, ui: bool):
+    click.echo("run xx-xx-xx")

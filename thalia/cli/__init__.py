@@ -20,6 +20,16 @@
 #
 #  Project: thalia
 #  Author: Godwin peter. O (me@godwin.dev)
-#  Created At: Thu 19 Dec 2024 12:57:06
+#  Created At: Thu 19 Dec 2024 12:55:00
 #  Modified By: Godwin peter. O (me@godwin.dev)
-#  Modified At: Thu 19 Dec 2024 12:57:06
+#  Modified At: Thu 19 Dec 2024 12:55:00
+
+import click
+
+
+@click.group()
+@click.option("--log-file", "-l", envvar="THALIA_LOG_FILE", default=".logs/thalia.txt")
+@click.option("--config", "-c", envvar="THALIA_CONFIG_FILE", default="app.yml")
+@click.pass_context
+def cli(ctx, log_file: str, config: str):
+    ctx.obj = {}

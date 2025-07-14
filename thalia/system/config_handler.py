@@ -20,6 +20,15 @@
 #
 #  Project: thalia
 #  Author: Godwin peter. O (me@godwin.dev)
-#  Created At: Thu 19 Dec 2024 12:56:35
+#  Created At: Thu 19 Dec 2024 12:56:17
 #  Modified By: Godwin peter. O (me@godwin.dev)
-#  Modified At: Thu 19 Dec 2024 12:56:35
+#  Modified At: Thu 19 Dec 2024 12:56:17
+
+
+def get_all(location: str = "config.ini"):
+    default_config = {}
+
+
+def value(obj_key):
+    # Get an object with key
+    pass

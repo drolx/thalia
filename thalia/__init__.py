@@ -24,6 +24,6 @@
 #  Modified By: Godwin peter. O (me@godwin.dev)
 #  Modified At: Thu 19 Dec 2024 12:36:24
 
+import asyncio
 
-def main() -> None:
-    pass
+event_loop = asyncio.get_event_loop()

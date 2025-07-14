@@ -20,10 +20,19 @@
 #
 #  Project: thalia
 #  Author: Godwin peter. O (me@godwin.dev)
-#  Created At: Thu 19 Dec 2024 12:52:44
+#  Created At: Thu 19 Dec 2024 12:55:28
 #  Modified By: Godwin peter. O (me@godwin.dev)
-#  Modified At: Thu 19 Dec 2024 12:52:44
+#  Modified At: Thu 19 Dec 2024 12:55:28
 
-sample:
-  item_one: 1
-  item_two: 2
+import click
+from aiohttp import web
+from thalia.system.route_handler import setup_routes
+from thalia import event_loop
+
+
+@click.command(help="Execute actions related to routes")
+def route():
+    app = web.Application(loop=event_loop)
+    system_routes = setup_routes(app=app)
+
+    web.run_app(system_routes, host="0.0.0.0", port=8090, loop=event_loop)

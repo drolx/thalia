@@ -20,6 +20,22 @@
 #
 #  Project: thalia
 #  Author: Godwin peter. O (me@godwin.dev)
-#  Created At: Thu 19 Dec 2024 12:55:28
+#  Created At: Mon 30 Dec 2024 15:27:19
 #  Modified By: Godwin peter. O (me@godwin.dev)
-#  Modified At: Thu 19 Dec 2024 12:55:28
+#  Modified At: Mon 30 Dec 2024 15:27:19
+
+
+from thalia.cli import cli
+from thalia.cli.service_daemon import run
+from thalia.cli.service_route import route
+from thalia.cli.app_task import task
+from thalia.cli.app_create import create
+
+
+def bootstrap_cli() -> None:
+    cli.add_command(run)
+    cli.add_command(task)
+    cli.add_command(route)
+    cli.add_command(create)
+
+    cli()

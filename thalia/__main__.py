@@ -20,19 +20,16 @@
 #
 #  Project: thalia
 #  Author: Godwin peter. O (me@godwin.dev)
-#  Created At: Thu 19 Dec 2024 12:42:10
+#  Created At: Mon 30 Dec 2024 15:26:41
 #  Modified By: Godwin peter. O (me@godwin.dev)
-#  Modified At: Thu 19 Dec 2024 12:42:10
-
-# import sys
-from thalia import main
-# from thalia.containers import Container
+#  Modified At: Mon 30 Dec 2024 15:26:41
 
 
-if __name__ == "__main__":
-    # container = Container()
-    # container.config.from_yaml("")
-    # container.init_resources()
-    # container.wire(modules=[sys.modules[__name__]])
+from thalia.system.cli_hook import bootstrap_cli
 
-    main()
+
+def main() -> None:
+    bootstrap_cli()
+
+
+main()
